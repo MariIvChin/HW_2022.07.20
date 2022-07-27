@@ -41,9 +41,9 @@ function renderUserInfo(obj) {
 userInfoInList.innerHTML = renderUserInfo(userInfo);
 
 // Exercise #3
-const productsInfoInList = document.getElementById("products-info-list");
+const productCards = document.getElementById("product-cards");
 
-const productsList = [
+const productsInfoList = [
   {
     title: "shampoo",
     price: 23.4,
@@ -70,11 +70,45 @@ const productsList = [
   },
 ];
 
-html = `<div class="card bg-success bg-gradient" style="width: 18rem">
-        <div class="card-header">Product Title</div>
+// console.dir(productsInfoList);
+
+function getInfoFromProduct(prod) {
+  // if ()
+  for (let value of prod)
+    htmlProductCards = `<div class="card bg-success bg-gradient mb-3" style="width: 18rem">
+        <div class="card-header">${value}: ${prod[0].title}</div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-success bg-gradient">Price</li>
-          <li class="list-group-item bg-success bg-gradient">Category</li>
-          <li class="list-group-item bg-success bg-gradient">Barcode</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[0].price}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[0].category}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[0].barcode}</li>
+        </ul>
+      </div>;
+  <div class="card bg-success bg-gradient mb-3" style="width: 18rem">
+        <div class="card-header">${value}: ${prod[1].title}</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[1].price}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[1].category}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[1].barcode}</li>
+        </ul>
+      </div>;
+  <div class="card bg-success bg-gradient mb-3" style="width: 18rem">
+        <div class="card-header">${value}: ${prod[2].title}</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[2].price}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[2].category}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[2].barcode}</li>
+        </ul>
+      </div>;
+  <div class="card bg-success bg-gradient mb-3" style="width: 18rem">
+        <div class="card-header">${value}: ${prod[3].title}</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[3].price}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[3].category}</li>
+          <li class="list-group-item bg-success bg-gradient">${value}: ${prod[3].barcode}</li>
         </ul>
       </div>`;
+  console.dir(prod[0]);
+  return htmlProductCards;
+}
+
+productCards.innerHTML = getInfoFromProduct(productsInfoList);
