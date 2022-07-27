@@ -107,7 +107,6 @@ function getInfoFromProduct(prod) {
           <li class="list-group-item bg-success bg-gradient">${value}: ${prod[3].barcode}</li>
         </ul>
       </div>`;
-  console.dir(prod[0]);
   return htmlProductCards;
 }
 
